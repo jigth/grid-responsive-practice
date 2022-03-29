@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Practice with responsiveness</title>
+    <style>
+      .container {
+        height: 100vh;
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas: 
+          "top alert"
+          "actions alert";
+
+        grid-gap: 10px;
+      }
+
+      .top-options {
+        background: cornflowerblue;
+        grid-area: top;
+      }
+
+      .actions-options {
+        background: lightpink;
+        grid-area: actions;
+      }
+
+      .alerts {
+        background: orange;
+        grid-area: alert;
+      }
+
+      @media screen and (max-width: 600px) {
+        .top-options {
+          grid-area: 1/1/2/3;
+        }
+        .alerts{
+          grid-area: 2/1/3/3;
+        }
+        .actions-options{
+          grid-area: 3/1/3/3;
+        }
+      }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+      <div class="top-options">
+        <h2>TOP Options</h2>
+        <ul>
+          <li>Options</li>
+          <li>Of</li>
+          <li>top</li>
+        </ul>
+      </div>
+
+      <div class="actions-options">
+        <h2>ACTIONS Options</h2>
+        <ul>
+          <li>Options</li>
+          <li>Of</li>
+          <li>ACTIONS list</li>
+        </ul>
+
+        <h2>Sub-actions options</h2>
+        <ul>
+          <li>Options</li>
+          <li>Of</li>
+          <li>Subactions list</li>
+        </ul>
+      </div>
+
+      <div class="alerts">
+        <h2>Alerts</h2>
+        <ul>
+          <li>Alert 1</li>
+          <li>Alert 2</li>
+          <li>Alert 3</li>
+        </ul>
+      </div>
+    </div>
+</body>
+</html>
